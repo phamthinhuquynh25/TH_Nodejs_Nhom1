@@ -1,0 +1,24 @@
+
+<% for(let i=0; i<data.lenght; i++) { %>
+  <tr>
+    <th scope="row">
+      <%= i+1 %>
+</th>
+
+<td>
+    <%= data.row[i].user %>
+</td>
+<td>
+    <%= data.row[i].fullname %>
+</td>
+<td>
+<%= data.row[i].address %>
+</td>
+<td>
+  <a href="/list-user/<%= data.rows[i].user %>"><span class="setting"><i class="fa fa-eye" aria-hidden="true"></i></span></a>
+  <a href="/edit-user/<%= data.rows[i].user %>"><span class="setting"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></a>
+  <span class="setting"><i class="fa fa-trash" aria-hidden="true"></i></span>
+</td>
+</tr>
+<% } %>
+ 

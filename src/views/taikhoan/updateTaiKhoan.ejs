@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="dangky container-fluid w-50 p-3 mt-5 ">
+
+        <form action="/update-taikhoan" method="POST">
+            <h3 class="fw-bold text-center pb-2">
+                <%= data.tieude %>
+            </h3>
+            <div class=" mb-3">
+                <input type="hidden" name="id" id="id" value="<%= data.rows.id %>">
+                <label for="tendk" class="form-label">Tên đăng ký</label>
+                <input type="text" class="form-control" name="tendk" id="tendk" value="<%= data.rows.tendk %>">
+            </div>
+
+            <div class=" mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="email" value="<%= data.rows.email %>">
+            </div>
+
+            <div class=" mb-3">
+                <label for="user" class="form-label">Tên tài khoản </label>
+                <input type="text" class="form-control" name="user" id="user" value="<%= data.rows.user %>">
+            </div>
+            <select class="form-select" aria-label="Default select example" name="quyen">
+                <option value="<%= data.rows.quyen %>">
+                    <%= data.rows.role %>
+                </option>
+                <% if(data.item){ %>
+                    <% for(let i=0; i < data.item.length; i++){ %>
+                        <% if(data.rows.quyen !=data.item[i].id) {%>
+                            <option value="<%= data.item[i].id %>">
+                                <%= data.item[i].role %>
+                            </option>
+                            <% }%>
+                                <% }%>
+                                    <% } %>
+            </select>
+
+            <div class="mb-3 pt-3">
+                <button type="submit" class="btn btn-primary w-100">Cập nhật</button>
+            </div>
+
+        </form>
+    </div>
+</div>

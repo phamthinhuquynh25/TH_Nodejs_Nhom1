@@ -1,0 +1,64 @@
+<div class="container-fluid pt-5">
+    <h3 class="fw-bold text-center pb-2">
+        DANH SÁCH <%= data.tieude %>
+    </h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên đăng ký</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tên tài khoản</th>
+                <!-- <th scope="col">Quyền</th> -->
+                <!-- <th scope="col">Trạng thái</th> -->
+                <th scope="col">Cài đặc</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.rows){%>
+                <% for(let i=0; i < data.rows.length; i++){ %>
+                    <tr>
+                        <th scope="row">
+                            <%= i+1 %>
+                        </th>
+                        <td>
+                            <%= data.rows[i].tendk %>
+                        </td>
+
+                        <td>
+                            <%= data.rows[i].email %>
+                        </td>
+                        <td>
+                            <%= data.rows[i].user %>
+                        </td>
+                        <!-- <td>
+                            <%= data.rows[i].role %>
+                        </td>
+                        <td>
+                            <%= data.trangthai[i] %>
+                        </td> -->
+                        <td class="text-center">
+
+                            <a href="/admin-taikhoan/<%= data.rows[i].id %>" class="setting pe-3 text-primary "><i
+                                    class="fa-regular fa-eye"></i></a>
+                            <a href="/update-taikhoan/<%= data.rows[i].id %>" class="setting pe-3 text-primary "><i
+                                    class="fa-solid fa-pen-to-square"></i></a>
+
+                            <% if(data.rows[i].quyen===2 ){ %>
+                                <% if(data.rows[i].trangthai===0 ){ %>
+                                    <a href="/delete-taikhoan/<%= data.rows[i].id %>"
+                                        class="setting pe-3 text-primary "><i class="fa-solid fa-trash"></i></a>
+                                    <% }else{ %>
+                                        <a href="/hoantac-taikhoan/<%= data.rows[i].id %>"
+                                            class="setting pe-3 text-primary "><i
+                                                class="fa-solid fa-arrow-rotate-left"></i></a>
+                                        <% } %>
+                                            <% } %>
+
+                        </td>
+                    </tr>
+                    <% } %>
+                        <% } %>
+        </tbody>
+    </table>
+</div>

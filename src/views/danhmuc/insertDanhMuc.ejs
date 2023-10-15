@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="dangky container-fluid w-50 p-3 mt-5 ">
+
+        <form action="/themdanhmuc" method="POST">
+            <h3 class="fw-bold text-center pb-2">
+                <%= data.tieude %>
+            </h3>
+            <div class=" mb-3">
+                <label for="tenhieu" class="form-label">Tên thương hiệu</label>
+                <input type="text" class="form-control" name="tenhieu" id="tenhieu">
+            </div>
+            <div class=" mb-3">
+                <label for="hinhhieu" class="form-label">Hình ảnh</label>
+                <input type="file" class="form-control" name="hinhhieu" id="hinhhieu">
+            </div>
+            <div class=" mb-3">
+                <label for="thutu" class="form-label">Thứ tự</label>
+                <input type="text" class="form-control" name="thutu" id="thutu">
+            </div>
+
+            <div class=" mb-3">
+                <label for="noibat" class="form-label">Nổi bật </label>
+                <input type="text" class="form-control" name="noibat" id="noibat">
+            </div>
+
+            <div class="mb-3 pt-3">
+                <button type="submit" class="btn btn-primary w-100">Cập nhật</button>
+            </div>
+
+        </form>
+    </div>
+</div>

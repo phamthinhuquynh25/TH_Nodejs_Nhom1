@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+.poster {
+    height: 450px;
+    width: 1500px;
+}
+
+.container,
+.main {
+    margin: 0;
+}
+
+.sanpham {
+    width: 250px;
+    border: 1px solid whitesmoke;
+    padding: 0;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.img-thumbnail {
+    width: 200px;
+    height: 250px;
+    border: none;
+}
+
+.img {
+    width: 450px;
+    height: auto;
+}
+
+.gia {
+    color: lightcoral;
+}
+
+#textbox {
+    width: 50px;
+    height: 35px;
+    text-align: center;
+
+}
+
+.danhmuc {
+    background: whitesmoke;
+    height: 500px;
+}
+
+.img-admin {
+    width: 100px;
+}
+
+.setting {
+    border: none;
+    background-color: white;
+}
+
+.dangky {
+    border-radius: 10px;
+    box-shadow: -1px 5px 20px darkgrey;
+    border: 2px solid lightgray !important;
+}

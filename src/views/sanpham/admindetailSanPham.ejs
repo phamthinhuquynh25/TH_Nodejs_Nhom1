@@ -1,0 +1,35 @@
+<div class="container m-auto pt-5">
+    <h3 class="fw-bold text-center pb-2">
+        <%= data.tieude %>
+    </h3>
+    <div class="row">
+        <div class="col-5 text-center">
+            <img src="/images/<%= data.rows.hinh %>" class="img" alt="<%= data.rows.hinh %>">
+        </div>
+        <div class="col-7 pt-5 ps-5 fs-5">
+            <div>
+                <h4 class="fw-bold ">Tên sản phẩm:
+                </h4>
+                <%= data.rows.tensp %>
+            </div>
+            <div>
+                <h4 class="fw-bold ">Giá tiền: </h4>
+                <%= data.rows.gia %> VND
+            </div>
+            <div>
+                <h4 class="fw-bold ">Giới tính: </h4>
+                <%= data.rows.gioitinh %>
+            </div>
+            <div>
+                <h4 class="fw-bold ">Thương hiệu: </h4>
+                <%= data.rows.tenhieu %>
+            </div>
+            <div>
+                <h4 class="fw-bold ">Thông tin sản phẩm: </h4>
+                <%= data.rows.ttsanpham %>
+            </div>
+
+        </div>
+    </div>
+
+</div>

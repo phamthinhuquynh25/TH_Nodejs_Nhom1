@@ -1,0 +1,41 @@
+<div class="container m-auto pt-5">
+    <div class="row">
+        <div class="col-5 text-center">
+            <img src="/images/<%= data.rows.hinh %>" class="img" alt="<%= data.rows.hinh %>">
+        </div>
+        <div class="col-7 pt-5 ps-5">
+            <div class="fw-bold ">
+                <h1>
+                    <%= data.rows.tensp %>
+                </h1>
+            </div>
+            <div class="gia">
+                <h2>
+                    <%= data.rows.gia %> VND
+                </h2>
+            </div>
+            <form action="" method="post">
+                <input type="hidden" name="id" value="<%= data.rows.id %>"><!--lấy về cart -->
+                <input type="hidden" name="img" value="<%= data.rows.hinh %>">
+                <input type="hidden" name="tensp" value="<%= data.rows.tensp %>">
+                <input type="hidden" name="gia" value="<%= data.rows.gia %>">
+                <input type="button" onclick="tru()" class="btn btn-light border-secondary up-down" value="-"
+                    id="button">
+                <input type="text" name="soluong" id="textbox" value="1">
+                <input type="button" onclick="cong()" class="btn btn-light border-secondary up-down" value="+"
+                    id="button">
+                <input type="submit" name="addtocart" id="addtocart" class="btn btn-danger text-light fs-5 ms-3"
+                    value="Thêm vào giỏ">
+            </form>
+
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-5">
+        <h3>Thông tin sản phẩm</h3>
+        <div>
+            <%= data.rows.ttsanpham %>
+        </div>
+
+    </div>
+</div>

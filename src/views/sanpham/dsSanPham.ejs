@@ -1,0 +1,58 @@
+<div class="container-fluid pt-5">
+    <h3 class="fw-bold text-center pb-2">
+        DANH SÁCH <%= data.tieude %>
+    </h3>
+    <a href="/insert-sanpham" class="border bg-primary p-2 text-light rounded-pill">Thêm sản phẩm</a>
+
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Hình ảnh</th>
+                <th scope="col">Giá</th>
+                <th scope="col">Giới tính</th>
+                <!-- <th scope="col">Thông tin sản phẩm</th> -->
+                <th scope="col">Thương hiệu</th>
+                <th scope="col">Cài đặc</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.rows){%>
+                <% for(let i=0; i < data.rows.length; i++){ %>
+                    <tr>
+                        <th scope="row">
+                            <%= i+1 %>
+                        </th>
+                        <td>
+                            <%= data.rows[i].tensp %>
+                        </td>
+                        <td>
+                            <img src="/images/<%= data.rows[i].hinh %>" class="img-admin">
+                        </td>
+                        <td>
+                            <%= data.rows[i].gia %>
+                        </td>
+                        <td>
+                            <%= data.rows[i].gioitinh %>
+                        </td>
+                        <!-- <td>
+                            <%= data.rows[i].ttsanpham %>
+                        </td> -->
+                        <td>
+                            <%= data.rows[i].tenhieu %>
+                        </td>
+                        <td class="text-center">
+                            <a href="/detail-sanpham/<%= data.rows[i].id %>" class="setting pe-3 text-primary "><i
+                                    class="fa-regular fa-eye"></i></a>
+                            <a href="/update-sanpham/<%= data.rows[i].id %>" class="setting pe-3 text-primary "><i
+                                    class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="/delete-sanpham/<%= data.rows[i].id %>" class="setting pe-3 text-primary "><i
+                                    class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <% } %>
+                        <% } %>
+        </tbody>
+    </table>
+</div>

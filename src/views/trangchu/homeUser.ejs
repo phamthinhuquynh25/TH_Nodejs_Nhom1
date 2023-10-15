@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <img src="/images/poster.jpg" class="img-fluid poster" alt="poster">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <!-- <% if(data.item){%>
+                    <% for(let i=0; i < data.item.length; i++){ %>
+                        <a href="/detail-hieunuochoa/<%= data.item[i].id %>">
+
+                            <img class="img-thumbnail mb-0" src="/images/<%= data.item[i].hinhhieu %>" class="slide"
+                                alt="<%= data.item[i].hinhhieu %>"><br>
+                        </a>
+                        <% } %>
+                            <% } %> -->
+            </div>
+        </div>
+    </div>
+    <div class="container m-auto pt-5">
+        <div class="text-center">
+            <h2 class="fw-bold">NƯỚC HOA</h2>
+        </div><br>
+        <div class="row justify-content-center">
+            <% if(data.rows){%>
+                <% for(let i=0; i < data.rows.length; i++){ %>
+                    <div class="col-3 m-4 text-center sanpham">
+                        <a href="/list-sanpham/<%= data.rows[i].id %>">
+                            <img src="/images/<%= data.rows[i].hinh %>" class="img-thumbnail"
+                                alt="<%= data.rows[i].hinh %>">
+                        </a>
+                        <div>
+                            <div class="text-secondary">
+                                <%= data.rows[i].idhieusp %>
+                            </div>
+
+                            <div>
+                                <a href="/list-sanpham/<%= data.rows[i].id %>">
+                                    <%= data.rows[i].tensp %>
+                                </a>
+                            </div>
+
+                            <div class="fw-normal gia">
+                                <%= data.rows[i].gia %> VND
+                            </div>
+                            <!--Them gio hang-->
+                            <!-- <form action="" method="post">
+                                <input type="hidden" name="id" value=" " />
+                                <input type="hidden" name="img" value="  " />
+                                <input type="hidden" name="tensp" value=" " />
+                                <input type="hidden" name="gia" value=" " />
+
+                                <div class="muahang">
+                                    <input type="submit" name="addtocart" id="addtocart" value="Đặt hàng" />
+                                </div>
+                            </form> -->
+                        </div>
+                    </div>
+                    <!-- <?php
+            }
+            ?> -->
+                    <% } %>
+                        <% } %>
+        </div>
+
+
+    </div>
+</div>

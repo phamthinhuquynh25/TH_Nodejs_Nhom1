@@ -1,0 +1,48 @@
+<div class="container-fluid pt-5">
+    <h3 class="fw-bold text-center pb-2">
+        DANH SÁCH <%= data.tieude %>
+    </h3>
+    <a href="/insert-danhmuc" class="border bg-primary p-2 text-light rounded-pill">Thêm danh mục</a>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên danh mục</th>
+                <th scope="col">Hình ảnh</th>
+                <th scope="col">Thứ tự</th>
+                <th scope="col">Nổi bật</th>
+                <th scope="col">Cài đặc</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.rows){%>
+                <% for(let i=0; i < data.rows.length; i++){ %>
+                    <tr>
+                        <th scope="row">
+                            <%= i+1 %>
+                        </th>
+                        <td>
+                            <%= data.rows[i].tenhieu %>
+                        </td>
+                        <td>
+                            <img src="/images/<%= data.rows[i].hinhhieu %>" class="img-admin">
+                        </td>
+                        <td>
+                            <%= data.rows[i].thutu %>
+                        </td>
+                        <td>
+                            <%= data.rows[i].noibat %>
+                        </td>
+                        <td class="text-center">
+
+                            <a href="/update-danhmuc/<%= data.rows[i].id %>" class="setting pe-3 text-primary "><i
+                                    class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="/delete-danhmuc/<%= data.rows[i].id %>" class="setting pe-3 text-primary "><i
+                                    class="fa-regular fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                    <% } %>
+                        <% } %>
+        </tbody>
+    </table>
+</div>

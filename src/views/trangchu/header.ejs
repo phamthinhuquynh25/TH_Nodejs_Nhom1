@@ -1,0 +1,95 @@
+<div class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">M&N</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <% if(data.session.user) {%>
+                        <% if(data.session.user.quyen===1 ) {%>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/admin">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/admin-danhmuc">Danh mục</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/admin-sanpham">Sản phẩm</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/admin-taikhoan">Tài khoản</a>
+                            </li>
+                            <div class="dropdown">
+                                <button class="border-0 pt-2 bg-transparent dropdown-toggle fw-bold" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <%= data.session.user.tendk %>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="/logout">Đăng xuất</a>
+                                </ul>
+                            </div>
+
+                            <% } else {%>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/list-sanpham">Sản phẩm</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/list-nuochoanam">Nước hoa nam</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/list-nuochoanu">Nước hoa nữ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin-taikhoan">Danh sách tài khoản</a>
+                                </li>
+                                <div class="dropdown">
+                                    <button class="border-0 pt-2 bg-transparent dropdown-toggle fw-bold" type="button"
+                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <%= data.session.user.tendk %>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="/logout">Đăng xuất</a>
+                                    </ul>
+                                </div>
+
+                                <% } %>
+
+
+                                    <% }else{ %>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/list-sanpham">Sản phẩm</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/list-nuochoanam">Nước hoa nam</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/list-nuochoanu">Nước hoa nữ</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/login">Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin-taikhoan">Danh sách tài khoản</a>
+                                        </li>
+                                        <% } %>
+
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
